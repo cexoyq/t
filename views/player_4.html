@@ -1,0 +1,126 @@
+<style type="text/css">
+.div_center{
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+}
+.div_play{
+	border: 1px solid #666;
+	display:table-column;
+	float:left;
+	width:480px;
+	height:300px;
+}
+</style>
+<script type="text/javascript" src="/static/jwplayer/jwplayer.js"></script>
+<script type="text/javascript" src="/static/jwplayer/jwplayer.html5.js"></script>
+{{template "header.html" .}}
+{{template "nav.html" .}}
+<div class="div_center">
+					<div id="playerzmblbkjP1_wrapper" class="div_play">
+                    <object name="playerzmblbkjP1" width="100%" height="100%" id="playerzmblbkjP1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                        <param name="movie" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="src" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="AllowScriptAccess" value="always">
+                    </object>
+                    </div>
+
+					<div id="playerzmblbkjP2_wrapper" class="div_play">
+                    <object name="playerzmblbkjP2" width="100%" height="100%" id="playerzmblbkjP2"  classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                        <param name="movie" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="src" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="AllowScriptAccess" value="always">
+                    </object>
+      				</div>
+
+					<div id="playerzmblbkjP3_wrapper" class="div_play">
+                    <object name="playerzmblbkjP3" width="100%" height="100%" id="playerzmblbkjP3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                        <param name="movie" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="src" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="AllowScriptAccess" value="always">
+                    </object>
+                    </div>
+
+					<div id="playerzmblbkjP4_wrapper" class="div_play">
+                    <object name="playerzmblbkjP4" width="100%" height="100%" id="playerzmblbkjP4" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                        <param name="movie" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="src" value="/static/jwplayer/jwplayer.flash.swf">
+                        <param name="AllowScriptAccess" value="always">
+                    </object>
+					</div>
+</div>
+<script type="text/javascript" language="javascript">
+var objplayer1=jwplayer('playerzmblbkjP1').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://a1.300y.com.cn/live/xy',
+	image: '',
+    //width:'485px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+var objplayer2=jwplayer('playerzmblbkjP2').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://a1.300y.com.cn/live/xy',
+	image: '',
+    //width:'600px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+var objplayer3=jwplayer('playerzmblbkjP3').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://a1.300y.com.cn/live/xy',
+	image: '',
+    //width:'600px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+var objplayer4=jwplayer('playerzmblbkjP4').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://a1.300y.com.cn/live/xy',
+	image: '',
+    //width:'600px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+</script>
+{{template "footer.html" .}}

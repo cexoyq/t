@@ -1,0 +1,133 @@
+<layout name="layout" />
+
+<script type="text/javascript" src="__PUBLIC__/jwplayer/jwplayer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/jwplayer/jwplayer.html5.js"></script>
+<style type="text/css">
+.t {
+	padding-top: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+</style>
+<script language="javascript" type="text/javascript">
+function rtmpplay(obj,video) { 
+  obj.load([{
+    file: video,
+    image: ''
+  }]);
+  //obj.play();
+}
+$(function() {
+	objselect=$("#selectlive");
+	objselect.change(function(){
+		console.log(objselect.find('option:selected').text());
+		varsel=objselect.find('option:selected').val();
+		switch(varsel)
+		{
+			case "1":
+				rtmpplay(objplayer1,"rtmp://120.27.134.28/live/ch1");
+				rtmpplay(objplayer2,"rtmp://120.27.134.28/live/ch2");
+				break;
+			case "2":
+				rtmpplay(objplayer1,"rtmp://120.27.134.28/live/ch3");
+				rtmpplay(objplayer2,"rtmp://120.27.134.28/live/ch4");
+				break;
+			case "3":
+				rtmpplay(objplayer1,"rtmp://t.300y.com.cn:9901/live/ch5");
+				rtmpplay(objplayer2,"rtmp://t.300y.com.cn:9901/live/ch6");
+				break;
+			case "4":
+				rtmpplay(objplayer1,"rtmp://t.300y.com.cn:9901/live/ch7");
+				rtmpplay(objplayer2,"rtmp://t.300y.com.cn:9901/live/ch8");
+				break;
+			case "5":
+				rtmpplay(objplayer1,"rtmp://t.300y.com.cn:9901/live/ch5");
+				rtmpplay(objplayer2,"rtmp://t.300y.com.cn:9901/live/ch6");
+				break;
+			case "6":
+				rtmpplay(objplayer1,"rtmp://t.300y.com.cn:9901/live/ch7");
+				rtmpplay(objplayer2,"rtmp://t.300y.com.cn:9901/live/ch8");
+				break;
+			case "7":
+				rtmpplay(objplayer1,"rtmp://t1.300y.com.cn:9901/live/ch5");
+				rtmpplay(objplayer2,"rtmp://t1.300y.com.cn:9901/live/ch6");
+				break;
+			case "8":
+				rtmpplay(objplayer1,"rtmp://t1.300y.com.cn:9901/live/ch7");
+				rtmpplay(objplayer2,"rtmp://t1.300y.com.cn:9901/live/ch8");
+				break;
+		}
+	});
+});
+</script>
+<div style="margin-left:20px;">
+<form>
+请选择直播频道：
+<select name="selectlive" id="selectlive" style="width:200px;">
+  <option value="1">阿里云ch1/ch2</option>
+  <option value="2">阿里云ch3/ch4</option>
+  <option value="3">DNS轮询地址3号台</option>
+  <option value="4">DNS轮询地址5号台</option>
+  <option value="5">武汉电信3台ch5/ch6</option>
+  <option value="6">武汉电信5台ch7/ch8</option>
+  <option value="7">西数1-3台ch5/ch6</option>
+  <option value="8">西数1-5台ch7/ch8</option>
+</select>
+</form>
+</div>
+<div id="playerzmblbkjP1_wrapper" style="width:695px;height:417px;float:left;padding-top:20px;">
+<object name="playerzmblbkjP1" width="100%" height="100%" id="playerzmblbkjP1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style=";">
+    <param name="movie" value="__PUBLIC__/jwplayer/jwplayer.flash.swf">
+    <param name="src" value="__PUBLIC__/jwplayer/jwplayer.flash.swf">
+    <param name="AllowScriptAccess" value="always">
+</object>
+</div>
+<div style="width:10px;height:397px;position:relative;float:left"></div>
+<div id="playerzmblbkjP2_wrapper" style="width:479px;height:288px;float:left;padding-top:20px;">
+    <object name="playerzmblbkjP2" width="100%" height="100%" id="playerzmblbkjP2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style=";">
+        <param name="movie" value="__PUBLIC__/jwplayer/jwplayer.flash.swf">
+        <param name="src" value="__PUBLIC__/jwplayer/jwplayer.flash.swf">
+        <param name="AllowScriptAccess" value="always">
+    </object>
+</div>
+
+<script type="text/javascript" language="javascript">
+var objplayer2=jwplayer('playerzmblbkjP1').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://120.27.134.28/live/ch2',
+	image: '',
+    //width:'485px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+var objplayer1=jwplayer('playerzmblbkjP2').setup({
+    //playlist: [{image:'',file:'rtmp://121.196.228.145/live/t1'}],
+    file:'rtmp://120.27.134.28/live/ch1',
+	image: '',
+    //width:'600px',
+    //height:'490px',
+    aspectratio:'16:9',
+    autostart:true,
+    controlbar:"none",
+    browserzoom:'scale',
+    fallback: 'false',
+    wmode:'direct',
+    quality:'high',
+    stretching:'uniform',
+    primary: jwplayer.utils.isChrome() ? "flash" : "html5",
+    bufferlength:1,
+    subscribe:true
+});
+</script>

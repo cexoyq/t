@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jwplayer.js"></script>
+	<script type="text/javascript" src="jwplayer.html5.js"></script>
+</head>
+<body>
+	<div id="playerzmblbkjP_wrapper" style="width:700px;height:300px;position:relative;">
+		<object name="playerzmblbkjP" width="100%" height="100%" id="playerzmblbkjP" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="position:absolute;top:0;left:0;">
+			<param name="movie" value="jwplayer.flash.swf">
+			<param name="src" value="jwplayer.flash.swf">
+			<param name="AllowScriptAccess" value="always">
+		</object>
+	</div>
+	<script type="text/javascript">
+	jwplayer('playerzmblbkjP').setup({
+		playlist: 'http://jwpsrv.com/feed/RxiqSWej.rss',
+		width: '700px',
+		aspectratio: '16:9',
+		fallback: 'false',
+		primary: jwplayer.utils.isChrome() ? "flash" : "html5"
+	});
+	</script>
+</body>
+</html>
