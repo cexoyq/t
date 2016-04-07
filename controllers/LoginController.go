@@ -23,7 +23,7 @@ func (this *LoginController) Get() {
 		this.Data["Err"] = "请登陆！"
 		this.TplName = "login.html"
     } else {
-        this.Redirect("/",200)
+        this.Redirect("/",302)
     }
 
 }
@@ -52,7 +52,7 @@ func (this *LoginController) Post() {
 		
 		log.Println("用户成功登录！")
 		//this.Ctx.Redirect(200,"/")
-		this.Redirect("/",200)
-		//this.TplName = "index.html"
+		this.Redirect("/",302)
+
 
 }

@@ -10,7 +10,7 @@ type LogoutController struct {
 
 func (this *LogoutController) Get() {
 	this.DestroySession();
-	this.TplName = "login.html"
-	//this.Ctx.Redirect(200,"/login")
+	//this.TplName = "login.html"
+	this.Ctx.Redirect(302,"/login")
 }
 

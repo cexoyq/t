@@ -26,6 +26,7 @@ func init() {
 	beego.InsertFilter("/player_4",beego.BeforeRouter,FilterUser)
 	beego.InsertFilter("/status",beego.BeforeRouter,FilterUser)
 	beego.InsertFilter("/status_dvr",beego.BeforeRouter,FilterUser)
+	beego.InsertFilter("/addtestsource",beego.BeforeRouter,FilterUser)
 	
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/login", &controllers.LoginController{})
@@ -33,7 +34,7 @@ func init() {
 	beego.Router("/player_4", &controllers.Player_4Controller{})
 	beego.Router("/status", &controllers.StatusController{})
 	beego.Router("/status_dvr", &controllers.Status_dvrController{})
-	
+	beego.Router("/addtestsource", &controllers.AddTestSourceController{})
 	
 	//beego.Router("/ws", &controllers.WebSocketController{})
 }
