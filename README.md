@@ -1,4 +1,4 @@
 # t
-test,beego + sqlite3
-go get github.com/astaxie/beego
-go get github.com/mattn/go-sqlite3
+test,beego + sqlite3   <br/>
+go get github.com/astaxie/beego  <br/>
+go get github.com/mattn/go-sqlite3   <br/>
