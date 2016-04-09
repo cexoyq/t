@@ -1,0 +1,78 @@
+{{template "include/header1.html" .}}
+{{template "include/nav.html" .}}
+<script type="text/javascript" language="javascript">
+	function rtmpplayer(id,rtmp) { 
+		alert(id + '：' + rtmp);
+		//alert(rtmp);
+		//CKobject.getObjectById('ckplayer_a1').playOrPause();
+		//CKobject.getObjectById('ckplayer_a1').newAddress(rtmp);
+		CKobject.getObjectById(id).newAddress(rtmp);
+	}
+</script>
+
+<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="col-xs-3 span3">
+                <label>窗口1选择视频</label>
+                	<select id="ck1" name="ckplayer_a1" onchange="rtmpplayer(this.name,$(this).val())">
+                    {{range $k,$v := .Parent}}
+						{{range $k1,$v1 := $v.Sources}}
+							<option value="{{$v1.Rtmp}}">{{$v1.Name}}</option>
+                        {{end}}
+                    {{end}}
+                </select>
+				</div>
+				<div class="col-xs-3 span3">
+                <label>窗口2选择视频</label>
+                	<select id="ck2" name="ckplayer_a2" onchange="rtmpplayer(this.name,$(this).val())">
+                    {{range $k,$v := .Parent}}
+						{{range $k1,$v1 := $v.Sources}}
+							<option value="{{$v1.Rtmp}}">{{$v1.Name}}</option>
+                        {{end}}
+                    {{end}}
+                </select>
+				</div>
+				<div class="col-xs-3 span3">
+                <label>窗口3选择视频</label>
+                	<select id="ck3" name="ckplayer_a3" onchange="rtmpplayer(this.name,$(this).val())">
+                    {{range $k,$v := .Parent}}
+						{{range $k1,$v1 := $v.Sources}}
+							<option value="{{$v1.Rtmp}}">{{$v1.Name}}</option>
+                        {{end}}
+                    {{end}}
+                </select>
+				</div>
+				<div class="col-xs-3 span3">
+                <label>窗口4选择视频</label>
+                	<select id="ck4" name="ckplayer_a4" onchange="rtmpplayer(this.name,$(this).val())">
+                    {{range $k,$v := .Parent}}
+						{{range $k1,$v1 := $v.Sources}}
+							<option value="{{$v1.Rtmp}}">{{$v1.Name}}</option>
+                        {{end}}
+                    {{end}}
+                </select>
+				</div>
+			</div>
+  </div>
+</div>
+
+<div class="div_center">
+					<div id="player1" class="div_play">
+
+                    </div>
+
+					<div id="player2" class="div_play">
+
+      				</div>
+
+					<div id="player3" class="div_play">
+
+                    </div>
+
+					<div id="player4" class="div_play">
+
+					</div>
+</div>
+
+{{template "include/footer1.html" .}}
