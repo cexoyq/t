@@ -15,6 +15,7 @@ func (this *AddTestSourceController) Get() {
 	if sess_username != nil {
 			this.Data["UserName"] = sess_username
 	}
-	models.RetuTestSource()
+	p,_ := models.RetuTestSource()
+	this.Data["Parent"] = p;
 	this.TplName = "addtestsource.html"
 }

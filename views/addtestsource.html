@@ -5,16 +5,21 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<div class="accordion" id="accordion-258581">
-            	<div class="accordion-group">
+			{{range $k,$v := .Parent}}
+			  <div class="accordion-group">
 					<div class="accordion-heading">
-						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-258581" href="#accordion-element-2">节点1</a>
+						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-258581" href="#accordion-element-{{$v.Id}}" id="{{$v.Id}}">{{$v.Name}}</a>
 					</div>
-					<div id="accordion-element-2" class="accordion-body collapse in">
-						<div class="accordion-inner">
-							功能块1...
+					<div id="accordion-element-{{$v.Id}}" class="accordion-body collapse in">
+						{{range $k1,$v1 := $v.Sources}}
+                        <div class="accordion-inner">
+								
+                            	<ol><a id="{{$v1.Id}}" href="#">{{$v1.Name}},{{$v1.Rtmp}}</a></ol>
 						</div>
-					</div>
+                        {{end}}
 				</div>
+				</div>
+			{{end}}
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-258581" href="#accordion-element-821751">选项卡 #1</a>
@@ -24,24 +29,19 @@
 							功能块...
 						</div>
 					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-258581" href="#accordion-element-981787">选项卡 #2</a>
-					</div>
-					<div id="accordion-element-981787" class="accordion-body collapse">
-						<div class="accordion-inner">
-							功能块...
-						</div>
-					</div>
-				</div>
-			</div>
+				</div><!--<div class="accordion-group">-->
+
+		  </div>
 		</div>
 		<div class="span6">
 			<form>
 				<fieldset>
 					<legend>添加测试源</legend><br /> 
-                    <label>选择上级</label><select name="parentname"></select>
+                    <label>选择上级</label><select name="parentname">
+                    	{{range $k,$v := .Parent}}
+							<option value="{{$v.Id}}">{{$v.Name}}</option>
+                        {{end}}
+                    </select>
                     <label>测试源名称</label><input type="text" /> 
                     <label>RTMP地址</label><input type="text" /> 
                     <span class="help-block">源的rtmp地址，如：rtmp://xxx.xxx.xxx.xxx/live/t1</span> <label class="checkbox"><input type="checkbox" /> 勾选同意</label> 
