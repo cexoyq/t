@@ -28,6 +28,8 @@ func init() {
 	beego.InsertFilter("/status_dvr",beego.BeforeRouter,FilterUser)
 	beego.InsertFilter("/addtestsource",beego.BeforeRouter,FilterUser)
 	
+	//beego.SetStaticPath("/crossdomain.xml","crossdomain.xml")
+	
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/login", &controllers.LoginController{})
 	beego.Router("/logout", &controllers.LogoutController{})
